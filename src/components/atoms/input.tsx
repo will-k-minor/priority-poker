@@ -6,7 +6,7 @@ import { FieldValues, UseFormRegister } from "react-hook-form";
 export interface InputProps extends React.ComponentProps<"input"> {
   labelText?: string;
   name: string;
-  register: UseFormRegister<FieldValues>
+  register: UseFormRegister<FieldValues>;
 }
 
 export const Input: FC<InputProps> = ({

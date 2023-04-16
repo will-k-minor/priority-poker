@@ -1,16 +1,15 @@
-import { useState } from 'react'
-import { FieldValues, useForm } from 'react-hook-form';
-import reactLogo from './assets/react.svg'
-import viteLogo from '/vite.svg'
-import './App.css'
-import { Avatar } from './components/atoms/avatar'
-import { ScoreForm } from './forms/score-form';
+import { useState } from "react";
+import { FieldValues, useForm } from "react-hook-form";
+import reactLogo from "./assets/react.svg";
+import viteLogo from "/vite.svg";
+import "./App.css";
+import { Avatar } from "./components/atoms/avatar";
+import { ScoreForm } from "./forms/score-form";
 
 function App() {
-
   const onScoreFormSubmit = (data: FieldValues) => {
     console.log(data);
-  }
+  };
 
   return (
     <div className="App">
@@ -23,10 +22,10 @@ function App() {
         </a>
       </div>
       <h1>Vite + React</h1>
-      <div className='card'>
+      <div className="card">
         <Avatar />
       </div>
-        <ScoreForm onSubmit={onScoreFormSubmit}/>
+      <ScoreForm onSubmit={onScoreFormSubmit} />
       <div>
         <p>
           Edit <code>src/App.tsx</code> and save to test HMR
@@ -36,7 +35,7 @@ function App() {
         Click on the Vite and React logos to learn more
       </p>
     </div>
-  )
+  );
 }
 
-export default App
+export default App;
