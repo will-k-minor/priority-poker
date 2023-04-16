@@ -16,11 +16,12 @@ export const Scale: React.FunctionComponent<ScaleProps> = ({
         <div>
             <Input 
                 {...inputProps} 
-                type="range" 
-                min={0} 
-                max={options.length - 1}
                 defaultValue={0}
-                onChange={(e) => setCurrentOption(options[e.target.value])}/>
+                max={options.length - 1}
+                min={0}
+                onChange={(e) => setCurrentOption(options[parseInt(e.target.value)])}
+                type="range" 
+                />
             <p>{currentOption}</p>
         </div>
     )

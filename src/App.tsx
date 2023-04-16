@@ -9,7 +9,20 @@ function App() {
 
   const scaleOptions = [
     "trivial", 
-    "minor", "normal", "medium", "major", "critical", "blocker"]
+    "minor", 
+    "normal", 
+    "major",
+  ];
+
+  const dueDates = [
+    "N/A",
+    "end of the month",
+    "end of sprint",
+    "end of week",
+    "tomorrow",
+    "today",
+    "blocks release"
+  ]
 
   return (
     <div className="App">
@@ -26,7 +39,9 @@ function App() {
         <Avatar />
       </div>
       <div>
-        <Scale options={scaleOptions} />
+        <Scale id="impact" options={scaleOptions} labelText='Impact'/>
+        <Scale id="effort" options={Array.from(Array(6), (_,x) => x.toString())} labelText='Effort' />
+        <Scale id="dueDate" options={dueDates} labelText='Due Date' />
         <p>
           Edit <code>src/App.tsx</code> and save to test HMR
         </p>
