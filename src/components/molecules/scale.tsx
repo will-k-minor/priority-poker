@@ -1,14 +1,12 @@
-import { useState } from "react"
+import { FC, useState, forwardRef } from "react"
 import { Input, InputProps } from "../atoms/input"
 
 export interface ScaleProps extends InputProps {
     options: Array<string>
 }
 
-export const Scale: React.FunctionComponent<ScaleProps> = ({
-    options,
-    ...inputProps
-}) => {
+export const Scale = forwardRef(function Scale(scaleProps: ScaleProps, ref) {
+    const { options, ...inputProps } = scaleProps;
 
     const [currentOption, setCurrentOption] = useState<string>(options[0]);
 
@@ -25,4 +23,4 @@ export const Scale: React.FunctionComponent<ScaleProps> = ({
             <p>{currentOption}</p>
         </div>
     )
-}
+});

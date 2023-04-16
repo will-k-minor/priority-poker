@@ -1,7 +1,8 @@
 import { css } from "@emotion/css";
 import { UserIcon } from "@heroicons/react/20/solid";
+import { FC } from "react";
 
-export const Avatar: React.FunctionComponent<{ imageUrl?: string }> = ({
+export const Avatar: FC<{ imageUrl?: string }> = ({
     imageUrl,
 }) => {
 
