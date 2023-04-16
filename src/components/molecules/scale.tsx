@@ -1,7 +1,7 @@
 import { FC, useState, forwardRef } from "react"
 import { Input, InputProps } from "../atoms/input"
 
-export interface ScaleProps extends InputProps {
+interface ScaleProps extends InputProps {
     options: Array<string>
 }
 

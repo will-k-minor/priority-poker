@@ -3,7 +3,13 @@ import { Scale } from "../components/molecules/scale";
 import { FieldValues, useForm } from "react-hook-form";
 import { Input } from "../components/atoms/input";
 
-export const ScoreForm: FC = () => {
+interface ScoreFormProps {
+    onSubmit(data: FieldValues): void;
+}
+
+export const ScoreForm: FC<ScoreFormProps> = ({
+    onSubmit
+}) => {
 
     const { handleSubmit, register } = useForm();
 
@@ -22,11 +28,7 @@ export const ScoreForm: FC = () => {
         "tomorrow",
         "today",
         "blocks release"
-      ]
-
-    const onSubmit = (data:FieldValues) => {
-        console.log(data);
-    }
+      ];
 
     return (
         <form onSubmit={handleSubmit(onSubmit)}>

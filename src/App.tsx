@@ -1,15 +1,16 @@
 import { useState } from 'react'
-import { useForm } from 'react-hook-form';
+import { FieldValues, useForm } from 'react-hook-form';
 import reactLogo from './assets/react.svg'
 import viteLogo from '/vite.svg'
 import './App.css'
-import { Scale } from './components/molecules/scale'
 import { Avatar } from './components/atoms/avatar'
-import { Input } from './components/atoms/input'
 import { ScoreForm } from './forms/score-form';
 
 function App() {
 
+  const onScoreFormSubmit = (data: FieldValues) => {
+    console.log(data);
+  }
 
   return (
     <div className="App">
@@ -25,7 +26,7 @@ function App() {
       <div className='card'>
         <Avatar />
       </div>
-        <ScoreForm />
+        <ScoreForm onSubmit={onScoreFormSubmit}/>
       <div>
         <p>
           Edit <code>src/App.tsx</code> and save to test HMR
