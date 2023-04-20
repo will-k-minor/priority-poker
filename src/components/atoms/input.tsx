@@ -6,7 +6,7 @@ import { FieldValues, UseFormRegister } from "react-hook-form";
 export interface InputProps extends React.ComponentProps<"input"> {
   labelText?: string;
   name: string;
-  register: UseFormRegister<FieldValues>;
+  register?: UseFormRegister<FieldValues>;
 }
 
 export const Input: FC<InputProps> = ({
@@ -25,7 +25,7 @@ export const Input: FC<InputProps> = ({
   return (
     <div className={styles.container}>
       {labelText && <label>{labelText}</label>}
-      <input {...inputProps} {...register(name)}></input>
+      <input {...inputProps} {...(register && { ...register(name) })}></input>
     </div>
   );
 };
